@@ -1,0 +1,201 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.Main {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* 必要に応じてオーバーフローを隠す */
+    display: flex;
+    align-items: center;
+    /* 子要素を横方向の中央に配置 */
+    flex-direction: column;
+    min-height: 798px;
+    min-width: 808px;
+}
+
+.Top {
+    background-color: rgb(249, 249, 249);
+    position: relative;
+    align-items: center;
+    /* 縦方向の中央揃え */
+    display: flex;
+    height: 75px;
+    width: 100%;
+}
+
+
+.TitleIcon {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+
+}
+
+
+.title {
+
+    margin: 0 auto;
+    font-size: 50px;
+    font-weight: 570;
+}
+
+
+.Center {
+    display: flex;
+    /* flex:7.5; */
+    /* height: 71.1%; */
+    width: 100%;
+}
+
+
+.Footers {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    /* flex:1.5; */
+    height: 18.9%;
+
+
+}
+
+
+.FormArea {
+    position: relative;
+
+    margin-top: 100px;
+    border: 2px solid black;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px 20px 20px 20px;
+
+}
+
+.LoginText {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 100%;
+    font-size: 45px;
+    font-weight: lighter;
+}
+
+.FormRow {
+    margin: 20px auto;
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.FormRow:first-child {
+    margin-top: 100px;
+}
+
+.Forms {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ErrorMessage {
+    padding: 10px;
+    position: absolute;
+    width: 80%;
+    left: 35px;
+    opacity: 0;
+}
+
+.ToRegister {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+}
+
+.form-item {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#VerifyArea {
+    display: none;
+}
+
+input[type="text"] {
+    padding: 0px 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 20px;
+}
+
+.Texts {
+    width: 80%;
+    height: 37px;
+    font-size: 16px;
+}
+
+label[type="label"] {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.submit-button {
+    /* padding: 10px 90px; */
+    height: 50px;
+    width: 40%;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+    background-color: white;
+    border: 2px solid #4a4a4a;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.custom-text {
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: relative;
+    left: 50%;
+    bottom: -50%;
+    font-size: 300%;
+    color: #747474;
+    pointer-events: none;
+    animation: blink 2s infinite;
+}
+
+
+
+@keyframes errorBlink {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <title>ritsucode</title>
+    <link rel="icon" type="image/png" href="/Image/Ritsucode.ico">
+
+</head>
+
+
+<body class="container">
+
+    <div class="Top">
+        <img src="/Image/Ritsucode.png" class="TitleIcon" id="TitleIcon">
+        <p class="title">Ritsucode</p>
+    </div>
+    <div class="Main">
+        <div class="FormArea" id="LoginArea">
+            <p class="LoginText">おかえりなさい.</p>
+            <form id="LoginForm">
+                <div class="FormRow">
+                    <div class="Forms">
+                        <div class="form-item">
+                            <label type="label" for="Name">メールアドレス</label>
+                            <input type="text" id="Address" name="email" placeholder="メールアドレス" class="Texts" required>
+                        </div>
+                        <div class="form-item">
+                            <label type="label" for="RoomID">パスワード</label>
+                            <input type="text" id="Password" name="password" placeholder="パスワード" class="Texts" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="FormRow">
+                    <button id="LoginButton" type="submit" class="submit-button">ログイン</button>
+                </div>
+            </form>
+            <img src="/Image/noUserExists.png" class="ErrorMessage" id="ErrorMessage">
+            <a class="ToRegister" href="https://rickyhome.net/Register.html">新規登録する</a>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Index/Index.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,823 @@
+.Main {
+    /* position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 750px;
+    min-height: 650px;
+    min-width: 808px; */
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#Welcome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1100;
+    text-align: center;
+    background: rgba(255, 255, 255, 0);
+    padding: 20px;
+    font-size: 300%;
+    display: none;
+
+}
+
+.sidebar {
+    width: 75px;
+    height: 100%;
+    background-color: rgb(248, 248, 248);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    /* 上部に余白を追加 */
+}
+
+/* サイドバーボタンのスタイル */
+.sidebar-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50% 0 50% 0;
+
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background-color: #555555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20%;
+    text-align: center;
+    transition: transform 0.4s;
+
+}
+
+.sidebar-button:hover {
+    background-color: #2c2c2c;
+}
+
+.sidebar-button.clicked {
+    transform: scale(1.2);
+    background-color: #2c2c2c;
+
+}
+
+.main-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+/* コンテンツコンテナのスタイル */
+.content-container {
+    position: absolute;
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    /* 2倍の高さに設定 */
+    transition: transform 0.5s ease-in-out;
+    /* スクロールアニメーション */
+}
+
+/* 各コンテンツのスタイル */
+.content {
+    height: 50%;
+    /* 各コンテンツを画面全体の半分の高さに */
+}
+
+.chat-content {
+    top: 0%;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    background-color: #ffffff;
+}
+
+.chat-container {
+    top: 0%;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.friend-list {
+    width: 25%;
+    background-color: #f1f1f1;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    min-width: 100px;
+    z-index: 1000;
+    /* z-indexを1に設定 */
+}
+
+.friendItem-chat {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transform: scale(1.0);
+    transition: transform 0.15s linear;
+}
+
+
+.friendItem-chat:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.friendItem-chat.active {
+    background-color: #ffffff;
+    border-right: none;
+
+}
+
+.friendItem-chat span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.createGroup {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+
+}
+
+.createGroup:hover {
+    background-color: #ddd;
+}
+
+.createGroup.active {
+    background-color: #ffffff;
+    border-right: none;
+}
+
+.chat-group-container {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    display: flex;
+    left: 25%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.chat-space {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.createGroup-space {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.groupName-content {
+    padding: 20px;
+}
+
+#groupNameText {
+    width: 400px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #999;
+    padding: 5px 10px;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #4a4a4a
+}
+
+.createGroup-button {
+    background-color: white;
+    color: #2c2c2c;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 0px 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 10px;
+}
+
+.groupMember-content {
+    padding: 20px;
+
+}
+
+.groupMemberList {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 400px;
+    max-width: 500px;
+
+    overflow-x: auto;
+    border: solid #a0a0a0 2px;
+}
+
+.friendList-forGroup-content {
+    padding: 20px;
+
+}
+
+.friendList-forGroup {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.friendItem-forGroupSelection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.friend-user-iconForgroup {
+    background-color: #333;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* cursor: pointer; */
+    font-size: 1.4rem;
+    min-width: 45px;
+    cursor: pointer;
+}
+
+.friend-user-iconForgroup:hover {
+    background-color: #696969;
+
+}
+
+.friendItem-forGroupSelection span {
+    width: 45px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+}
+
+.friendItem-forGroup {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transform: scale(1.0);
+    transition: transform 0.15s ease-in-out;
+    cursor: pointer;
+
+}
+
+.friendItem-forGroup:hover {
+    background-color: #ececec;
+    transform: scale(1.02);
+}
+
+.chat-content {
+    /* flex-grow: 1; */
+    height: calc(100% - 60px);
+    padding: 15px;
+    overflow-y: auto;
+    background: #ffffff;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-input {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* 子要素を下寄せ */
+}
+
+.chat-message {}
+
+.chat-input textarea {
+    flex-grow: 1;
+    border: none;
+    border-top: solid rgb(83, 83, 83) 2px;
+    outline: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    font-weight: lighter;
+    resize: none;
+    min-height: 40px;
+    max-height: 200px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.chat-input button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 17px;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+.chat-input button:hover {
+    color: #000000;
+    border: 2px solid #000000;
+
+}
+
+
+.nonMessages {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    opacity: 0.5;
+
+}
+
+.message {
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 40%;
+    /* 親要素の70%を最大幅に設定 */
+    word-wrap: break-word;
+    /* 長い単語を改行 */
+    box-sizing: border-box;
+    /* パディングとボーダーを含めたサイズにする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.message.sent {
+    background-color: #c9ff9e;
+    align-self: flex-end;
+    /* 右寄せに設定 */
+}
+
+.message.received {
+    background-color: #dfdfdf;
+    align-self: flex-start;
+    /* 左寄せに設定 */
+}
+
+.message.sent::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #c9ff9e;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.message.received::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-right: 10px solid #dfdfdf;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.chat-userContent {
+    display: flex;
+    height: 40px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.chat-icon {
+    background-color: #333;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* cursor: pointer; */
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.chat-name {
+    left: 0;
+}
+
+.friend-content {
+    position: absolute;
+    background-color: #ffffff;
+    position: relative;
+    top: 0%;
+    height: 50%;
+    /* 初期位置を画面外に設定 */
+}
+
+.friend-content-content {
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.friend-content-content:last-child {
+    border-bottom: none;
+}
+
+.addFriend-content {
+    width: 100%;
+    /* padding-left: 10px; */
+}
+
+
+.addFriend-instruction {
+    color: #313131;
+    font-size: 19px;
+    font-weight: lighter;
+}
+
+.addFriend-form {
+    padding-top: 0px;
+}
+
+#addFriendText {
+    width: 400px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #999;
+    padding: 5px 10px;
+    font-size: 25px;
+    font-weight: lighter;
+    color: #4a4a4a
+}
+
+.addFriend-button {
+    background-color: white;
+    color: #2c2c2c;
+    border-radius: 10px;
+    font-size: 25px;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 0px 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 10px;
+}
+
+.addFriend-message {
+    opacity: 0;
+    position: absolute;
+    left: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 55px;
+    color: white;
+    border-radius: 35px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.addFriend-message.success {
+    background-color: #3be885;
+}
+
+.addFriend-message.error {
+    background-color: rgb(236, 95, 89);
+
+}
+
+.addFriend-mark.check {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.addFriend-mark.error {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+/* input[type="text"] {
+    width: 40%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #999;
+    padding: 5px 10px;
+} */
+.friendList {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.friendItem {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.friend-user-icon {
+    background-color: #333;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* cursor: pointer; */
+    font-size: 1.4rem;
+    margin-right: 15px;
+    min-width: 45px;
+}
+
+.friendList span {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friendRequestItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out, opacity 0.4s linear, background-color 0.4s linear;
+
+
+}
+
+.friendRequestItem.accept {
+    /* opacity: 0; */
+    background-color: #3be885;
+    transform: translateX(-100%);
+}
+
+
+.friendRequestItem.reject {
+    background-color: rgb(236, 95, 89);
+    /* opacity: 0; */
+    transform: translateX(100%);
+
+}
+
+
+.friendRequests {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.friendRequests span {
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+
+.friendRequests button {
+    border: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.accept-button {
+    background-color: #3be885;
+}
+
+.accept-button:hover {
+    background-color: #a9ffce;
+}
+
+.reject-button {
+    background-color: rgb(236, 95, 89);
+}
+
+.reject-button:hover {
+    background-color: #ffa9a9;
+}
+
+
+.FormArea {
+    position: relative;
+
+    margin-top: 100px;
+    border: 2px solid black;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px 20px 20px 20px;
+
+}
+
+.LoginText {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 20px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 100%;
+    font-size: 45px;
+    font-weight: lighter;
+}
+
+.FormRow {
+    margin: 20px auto;
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.FormRow:first-child {
+    margin-top: 100px;
+}
+
+.Forms {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ErrorMessage {
+    padding: 10px;
+    position: absolute;
+    width: 80%;
+    left: 35px;
+    opacity: 0;
+}
+
+.ToRegister {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+}
+
+.form-item {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#VerifyArea {
+    display: none;
+}
+
+/* input[type="text"] {
+    padding: 0px 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 20px;
+} */
+
+.Texts {
+    width: 80%;
+    height: 37px;
+    font-size: 16px;
+}
+
+label[type="label"] {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.submit-button {
+    /* padding: 10px 90px; */
+    height: 50px;
+    width: 40%;
+    font-size: 20px;
+    font-weight: normal;
+    color: black;
+    background-color: white;
+    border: 2px solid #4a4a4a;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.custom-text {
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: relative;
+    left: 50%;
+    bottom: -50%;
+    font-size: 300%;
+    color: #747474;
+    pointer-events: none;
+    animation: blink 2s infinite;
+}
+
+
+
+@keyframes errorBlink {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes WelcomeBlink {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

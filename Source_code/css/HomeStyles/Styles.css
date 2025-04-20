@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* overflow: hidden; */
+    font-family: 'Noto Sans JP', sans-serif;
+    min-width: 740px;
+    position: relative;
+    /* font-family: Arial, sans-serif; */
+}

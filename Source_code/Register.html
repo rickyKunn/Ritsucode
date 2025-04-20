@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registerStyle.css">
+    <link rel="icon" type="image/png" href="/Image/Ritsucode.ico">
+
+</head>
+
+<body class="container">
+    <div class="Top">
+        <button class="iconButton" id="iconButton">
+            <img src="/Image/Ritsucode.png" class="icon">
+        </button>
+        <p class="title">Ritsucode</p>
+    </div>
+    <div class="Main">
+        <!-- <div class="checkmark-wrapper">
+            <div class="checkmark-container">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+        </div> -->
+        <div class="FormArea" id="RegisterArea">
+            <p class="RegisterText">ようこそ.</p>
+            <form id="RegisterForm">
+                <div class="FormRow">
+                    <div class="Forms">
+                        <div class="form-item">
+                            <label type="label" for="RoomID">ユーザー名</label>
+                            <input type="text" id="username" name="Name" placeholder="ユーザー名" class="Texts" required>
+                        </div>
+                        <div class="form-item">
+                            <label type="label" for="Name">メールアドレス</label>
+                            <input type="text" id="email" name="email" placeholder="メールアドレス" class="Texts" required>
+                        </div>
+                        <div class="form-item">
+                            <label type="label" for="RoomID">パスワード</label>
+                            <input type="text" id="password" name="Name" placeholder="パスワード" class="Texts" required>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="FormRow">
+                    <button id="RegisterButton" type="submit" class="submit-button">登録</button>
+                </div>
+
+            </form>
+            <div id="loadingScreen">
+                <div class="spinner"></div>
+            </div>
+            <img src="/Image/userExistsError.png" class="ErrorMessage" id="ErrorMessage">
+
+        </div>
+        <div class="FormArea Verify" id="VerifyArea">
+            <p class="VerifyText" id="VerifyText">30分以内に_に届いた認証コードを入力してください</p>
+            <form id="VerifyForm">
+                <div class="FormRow Verify">
+                    <div class="Forms">
+                        <div class="form-item">
+                            <label type="label" for="RoomID">認証コード</label>
+                            <input type="text" id="VerifyCode" name="VerifyCode" placeholder="認証コード" class="Texts"
+                                maxlength="6" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="FormRow Verify">
+                    <button id="VerifyButton" type="submit" class="submit-button Verify"
+                        style="opacity: 0.5;">Verify</button>
+                </div>
+            </form>
+            <img src="/Image/RegisterCodeError.png" class="ErrorMessage" id="RegisterCodeErrorMessage">
+            <div class="checkmark-wrapper" id="checkmark-wrapper">
+                <div class="checkmark-container">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                </div>
+            </div>
+            <!-- <p class="VerifyText" id="">認証コードが届かない場合,再送信してください</p> -->
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Register/Register.js"></script>
+</body>
+
+</html>

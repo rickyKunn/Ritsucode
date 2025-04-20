@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="container">
+    <div class="FormArea" id="BoxArea">
+        <form id="RoomSetting">
+            <div class="FormRow">
+                <div class="Forms">
+                    <div class="form-item">
+                        <label type="label" for="RoomID">Verify Code</label>
+                        <input type="text" id="VerifyCode" name="Name" placeholder="認証コード" class="Texts" maxlength="6"
+                            required>
+                    </div>
+                </div>
+            </div>
+            <div class="FormRow">
+                <button id="RegisterButton" type="submit" class="submit-button" style="opacity: 0.5;">Verify</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/verify/verify.js"></script>
+</body>
+
+</html>

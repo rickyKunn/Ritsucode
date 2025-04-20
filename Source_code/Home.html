@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/HomeStyles/TopStyle.css">
+    <link rel="stylesheet" href="css/HomeStyles/Styles.css">
+    <link rel="stylesheet" href="css/HomeStyles/CenterStyle.css">
+
+    <title>ritsucode</title>
+    <link rel="icon" type="image/png" href="/Image/Ritsucode.ico">
+
+</head>
+
+
+<body class="container">
+    <h1 id="Welcome"></h1>
+
+    <div class="Top">
+        <img id="TitleIcon" src="/Image/Ritsucode.png" class="Titleicon">
+        <p class="title" id="title">Ritsucode</p>
+        <div class="icon-container">
+            <div class="user-icon" id="userIcon"></div>
+            <div class="popup" id="popup">
+                <ul>
+                    <li id="logOut">ログアウト</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="Main" style="display: none;">
+        <div class="sidebar">
+            <button class="sidebar-button clicked" id="chatButton">チャット</button>
+            <button class="sidebar-button" id="friendButton">フレンド</button>
+        </div>
+        <div class="main-content">
+
+            <div class="content-container" id="contentContainer">
+                <div class="chat-container">
+                    <div class="friend-list">
+                        <li class="createGroup">
+                            <div class="friend-user-icon"></div>
+                            <span>グループを作成</span>
+                        </li>
+                    </div>
+                    <div class="chat-group-container">
+                        <div class="chat-space">
+                            <div class="chat-content" id="chat-content">
+                            </div>
+                            <div class="chat-input">
+                                <textarea id="chat-message" placeholder="メッセージを送信"></textarea>
+                            </div>
+                        </div>
+                        <div class="createGroup-space">
+
+                            <div class="createGroup-content">
+                                <div class="groupName-content">
+                                    <h1>グループ名</h1>
+                                    <input type="text" id="groupNameText" placeholder="グループ名(15文字まで)" required
+                                        maxlength="15">
+                                    <input type="submit" class="createGroup-button" value="作成">
+
+                                </div>
+                            </div>
+                            <div class="createGroup-content">
+                                <div class="groupMember-content">
+                                    <h1>メンバー</h1>
+                                    <ul class="groupMemberList"></ul>
+
+                                </div>
+                            </div>
+                            <div class="createGroup-content">
+                                <div class="friendList-forGroup-content">
+                                    <h1>メンバーを選択</h1>
+                                    <ul class="friendList-forGroup">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="friend-content">
+                    <div class="friend-content-content">
+                        <div class="addFriend-content">
+                            <div class="addFriend-message" id="addFriendMessage">
+                                <div class="addFriend-mark" id="addFriendMark">✔</div>
+                                <div class="addFriend-result">送信に成功しました！</div>
+                            </div>
+                            <form class="addFriend-form" id="addFriendForm">
+
+                                <div class="form-row">
+                                    <h2>フレンドを追加</h2>
+                                    <p for="name" class="addFriend-instruction">ユーザー名で検索</p>
+                                </div>
+                                <div class="form-row">
+                                    <input type="text" id="addFriendText" placeholder="ユーザー名" required>
+                                    <input type="submit" class="addFriend-button" value="送信">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="friend-content-content">
+                        <h2>フレンド一覧</h2>
+                        <ul class="friendList"></ul>
+
+                    </div>
+                    <div class="friend-content-content">
+                        <h2>フレンド申請</h2>
+                        <div class="friendRequests">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/Home/InitialSetting.js"></script>
+    <script src="js/Home/InitialConnectionToPHP.js"></script>
+    <script src="js/Home/Utility.js"></script>
+    <script src="js/Home/SocketHandler.js"></script>
+    <script src="js/Home/AccountHandler.js"></script>
+    <script src="js/Home/EventHandler.js"></script>
+    <script src="js/Home/ChatHandler.js"></script>
+    <script src="js/Home/FriendHandler.js"></script>
+</body>
+
+</html>
