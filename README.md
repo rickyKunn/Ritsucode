@@ -1,4 +1,5 @@
-# Ritsucode 
+# [Ritsucode](https://rikyhome.net)
+
 
 ![Node.js](https://img.shields.io/badge/Node.js-v18-blue) ![SQLite](https://img.shields.io/badge/SQLite-3.38.5-lightgrey)
 
