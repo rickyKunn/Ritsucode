@@ -49,5 +49,5 @@
   - **データベース**：SQLite 3  
 - **認証**  
   - メール送信：PHPmailer  
-  - JWT：`jsonwebtoken`  
+  - JWT：jsonwebtoken
 
