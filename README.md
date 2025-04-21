@@ -40,7 +40,7 @@
 ## 使用技術
 
 - **フロントエンド**  
-  - HTML5 / CSS3 / JavaScript (ES2021)  
+  - HTML5 / CSS / JavaScript
 - **バックエンド**  
   - **Web サーバー**：nginx  
   - **Socket サーバー**：Node.js
