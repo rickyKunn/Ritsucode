@@ -17,6 +17,8 @@
 
 ![ログイン画面](./docs/login.png)  
 ![チャット画面](./docs/chat.png)
+![グループ作成画面](./docs/group.png)
+![フレンド画面](./docs/friend.png)
 
 ---
 
