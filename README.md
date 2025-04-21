@@ -1,6 +1,5 @@
 # [Ritsucode](https://rickyhome.net/)
 
----
 
 ## プロジェクト概要
 
